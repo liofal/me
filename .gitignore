@@ -1,4 +1,19 @@
+# Secrets / local env
 .env
-.terraform
-terraform.tfstate
-terraform.tfstate.backup
+.env.*
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc

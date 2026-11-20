@@ -4,11 +4,21 @@ resource "digitalocean_project" "me_liofal_net" {
   description = "Project hosting my static resume website"
   purpose     = "Web Application"
   environment = "Production"
+
+  # Destroying this would take the site's DNS/project down; remove deliberately.
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Define the DigitalOcean Domain for the delegated subdomain
 resource "digitalocean_domain" "me_liofal_net_zone" {
   name = "me.liofal.net"
+
+  # Destroying this would take the site's DNS/project down; remove deliberately.
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 # Define the DigitalOcean App
